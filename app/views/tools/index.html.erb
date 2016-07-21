@@ -1,0 +1,15 @@
+<h1>Your Tools</h1>
+<ul class= "tool_info">
+  <% current_user.tools.each do |tool|%>
+    <li><%= link_to tool.name, user_tool_path(current_user, tool) %>
+      <p>How many: <%= tool.quantity %></p>
+      <p>Price: <%= tool.price %></p>
+      <p>Category: <%= tool.category_name %>
+      <p><%= link_to "Edit", edit_user_tool_path(current_user, tool) %>
+         <%= link_to "Delete", user_tool_path(current_user, tool), method: :delete %>
+      </p>
+    </li>
+    <% end %>
+</ul>
+
+<%= link_to "Create New Tool", new_user_tool_path %>

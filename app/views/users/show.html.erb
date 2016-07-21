@@ -1,0 +1,6 @@
+<h1 id="greeting">Welcome, <%= current_user.name %>!</h1>
+<% unless current_user.tools.empty? %>
+  <h2 id="newest_tool">The last tool you created was: <%= current_user.most_recent_tool.name %></h2>
+<% end %>
+<%= link_to "Your tools", user_tools_path(current_user) %>
+<%= link_to "Create Tool", new_user_tool_path(current_user) %>

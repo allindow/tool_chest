@@ -1,0 +1,9 @@
+<h1><%= @category.name %> Tools</h1>
+
+<ul class="tool_info">
+<% if @tools %>
+  <% @tools.each do |tool| %>
+  <li><%= tool.name %></li>
+  <% end %>
+<% end %>
+</ul>
